@@ -841,8 +841,8 @@ public class MainActivity extends AppCompatActivity {
                 HashMap<String, String> map = data.get(position);
 
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                intent.putExtra("title", map.get("title"));             //added data to pass to the new activity
-                intent.putExtra("release", map.get("release"));
+                intent.putExtra("title", map.get("title"));             //adding data to intent using bundle
+                intent.putExtra("release", map.get("release"));         //use the same key value to extract the data in DetailActivity
                 intent.putExtra("director", map.get("director"));
                 intent.putExtra("cast", map.get("cast"));
                 intent.putExtra("genre", map.get("genre"));

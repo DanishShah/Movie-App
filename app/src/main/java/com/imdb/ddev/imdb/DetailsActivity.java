@@ -1,5 +1,6 @@
 package com.imdb.ddev.imdb;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,8 @@ public class DetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);          // setting a back button on your action bar
 
         Bundle bundle = getIntent().getExtras();
+        // use bundle.getString("key");
+        // use the key which we used in our previous activity
 
         TextView title = (TextView) findViewById(R.id.title);
         TextView release = (TextView) findViewById(R.id.release);
@@ -34,7 +37,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         ImageView poster = (ImageView) findViewById(R.id.poster);
 
-        title.setText("Movie: "+bundle.getString("title"));
+        title.setText("Movie: "+bundle.getString("title"));             // recieving the data which we passed from previous activity using bundle
         release.setText("Release Date: "+bundle.getString("release"));
         director.setText("Director: "+bundle.getString("director"));
         genre.setText("Genre: "+bundle.getString("genre"));
@@ -51,4 +54,5 @@ public class DetailsActivity extends AppCompatActivity {
                 .into(poster);
 
     }
+
 }
